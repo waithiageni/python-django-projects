@@ -1,0 +1,47 @@
+<!DOCTYPE>
+<html lang="en">
+<head>
+	<title>Courses_list</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>	
+</head>
+
+<body>
+
+<div class="container">
+  <h2>All_Courses</h2>
+  <p>Courses available in AkiraChix</p>	
+<table class="table table-striped table-bordered">
+	<tr>
+		<th>Name</th>
+		<th>Duration</th>
+		<th>Start Date</th>
+		<th>End Date</th>
+		<th>Description</th>
+		<th>Teacher</th>
+		<th>Edit</th>
+		<th>Details</th>
+	</tr>
+
+	{% for Course in Courses %}
+	<tr>
+		<td>{{Course.name}}</td>
+		<td>{{Course.duration}}</td>
+		<td>{{Course.start_date}}</td>
+		<td>{{Course.end_date}}</td>
+		<td>{{Course.description}}</td>
+		<td>{{Course.teacher}}</td>
+		<td><a href="/Course/edit/{{Course.pk}}">Edit</a></td>
+		<td><a href="/Course/view/{{Course.pk}}">View More</a></td>
+	</tr>
+	{% endfor %}
+</table>
+
+
+</div>
+</body>
+</html>
+
