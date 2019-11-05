@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>Registration</title>
+</head>
+
+<body>
+	{% if user.is_authenticated %}
+
+		<h1>Welcome {{user.username}}</h1>
+		Add a student
+		<a href="/student/add/">Here</a>
+		<h2>logout <a href="/accounts/logout/">here</a></h2>
+
+	{% else %}	
+
+		Hello Guest
+		you can login
+		<a href="/accounts/login/">here</a>
+		<br>
+
+		or create an account
+
+		<a href="/accounts/register/">here</a>
+
+	{% endif %}	
+	
+
+	
+
+	
+</body>
+</html>
